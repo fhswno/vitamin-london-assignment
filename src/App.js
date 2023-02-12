@@ -1,10 +1,15 @@
 import './App.css';
 import { Button, Form, Table } from 'react-bootstrap';
+import React, { useState } from 'react';
 
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const times = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 function App() {
+  const [eventName, setEventName] = useState('');
+  const [eventDay, setEventDay] = useState('Monday');
+  const [eventTime, setEventTime] = useState(9);
+
   return (
     <div>
       <Table>
@@ -33,11 +38,17 @@ function App() {
             type="text"
             id="event-name"
             placeholder="Event name"
+            value={eventName}
+            onChange={(e) => setEventName(e.target.value)}
           />
           <Form.Label htmlFor="event-day">
             Day
           </Form.Label>
-          <Form.Select id="event-day">
+          <Form.Select
+            id="event-day"
+            value={eventDay}
+            onChange={(e) => setEventDay(e.target.value)}
+          >
             {days.map((day) => (
               <option key={day}>{day}</option>
             ))}
@@ -45,9 +56,15 @@ function App() {
           <Form.Label htmlFor="event-time">
             Time
           </Form.Label>
-          <Form.Select id="event-time">
+          <Form.Select
+            id="event-time"
+            value={eventTime}
+            onChange={(e) => setEventTime(Number(e.target.value))}
+          >
             {times.map((time) => (
-              <option key={time}>{time}:00</option>
+              <option key={time} value={time}>
+                {time}:00
+              </option>
             ))}
           </Form.Select>
           <Button
