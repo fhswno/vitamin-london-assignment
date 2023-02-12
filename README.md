@@ -33,3 +33,7 @@ When starting this project, my goal was not to spend more than 2.5 hours on it -
 The Calendar view currently has the expected functionality, but lacks animations. Events can only be an hour long, and can only start at pre-defined hours.
 
 The `table` element used in this solution prevents events from being dragged and dropped to another day/time. This choice also means that we couldn't add controls to go from one week to another.
+
+## 💻 Functionality Demo
+
+![Demo](./demo.gif)
