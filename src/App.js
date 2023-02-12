@@ -9,6 +9,17 @@ function App() {
   const [eventName, setEventName] = useState('');
   const [eventDay, setEventDay] = useState('Monday');
   const [eventTime, setEventTime] = useState(9);
+  const [events, setEvents] = useState([]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setEvents([
+      ...events,
+      { name: eventName, day: eventDay, time: eventTime },
+    ]);
+    setEventName('');
+    setEventTime(9);
+  };
 
   return (
     <div>
@@ -30,7 +41,7 @@ function App() {
         </tbody>
       </Table>
       <div className="form-container">
-        <form className="form-element">
+        <form className="form-element" onSubmit={handleSubmit}>
           <Form.Label htmlFor="event-name">
             Name
           </Form.Label>
@@ -50,7 +61,9 @@ function App() {
             onChange={(e) => setEventDay(e.target.value)}
           >
             {days.map((day) => (
-              <option key={day}>{day}</option>
+              <option key={day} value={day}>
+                {day}
+              </option>
             ))}
           </Form.Select>
           <Form.Label htmlFor="event-time">
