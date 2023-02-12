@@ -12,13 +12,18 @@ function App() {
   const [events, setEvents] = useState([]);
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    setEvents([
-      ...events,
-      { name: eventName, day: eventDay, time: eventTime },
-    ]);
-    setEventName('');
-    setEventTime(9);
+    if (eventName === '' || eventDay === '' || eventTime === '') {
+      event.preventDefault();
+      alert('Please make sure to fill out all the fields, and try again.')
+    } else {
+      event.preventDefault();
+      setEvents([
+        ...events,
+        { name: eventName, day: eventDay, time: eventTime },
+      ]);
+      setEventName('');
+      setEventTime(9);
+    }
   };
 
   // This function returns the number of events that are scheduled at the same day and time
