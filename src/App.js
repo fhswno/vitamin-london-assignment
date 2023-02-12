@@ -24,29 +24,39 @@ function App() {
           ))}
         </tbody>
       </Table>
-      <div>
-        <form>
-          <Form.Label>
+      <div className="form-container">
+        <form className="form-element">
+          <Form.Label htmlFor="event-name">
             Name
           </Form.Label>
-          <Form.Control type="text" />
-          <Form.Label>
+          <Form.Control
+            type="text"
+            id="event-name"
+            placeholder="Event name"
+          />
+          <Form.Label htmlFor="event-day">
             Day
           </Form.Label>
-          <Form.Select>
+          <Form.Select id="event-day">
             {days.map((day) => (
               <option key={day}>{day}</option>
             ))}
           </Form.Select>
-          <Form.Label>
+          <Form.Label htmlFor="event-time">
             Time
           </Form.Label>
-          <Form.Select>
+          <Form.Select id="event-time">
             {times.map((time) => (
               <option key={time}>{time}:00</option>
             ))}
           </Form.Select>
-          <Button variant="primary" type="submit">Add Event</Button>
+          <Button
+            variant="primary"
+            type="submit"
+            className="submit-button"
+          >
+            Add Event
+          </Button>
         </form>
       </div>
     </div>
