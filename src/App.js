@@ -2,7 +2,7 @@ import './App.css';
 import { Button, Form, Table } from 'react-bootstrap';
 import React, { useState } from 'react';
 
-const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 const times = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 function App() {
@@ -21,6 +21,11 @@ function App() {
     setEventTime(9);
   };
 
+  const getEventCount = (day, time) => {
+    return events.filter((event) => event.day === day && event.time === time)
+      .length;
+  };
+
   return (
     <div>
       <Table>
@@ -36,6 +41,24 @@ function App() {
           {times.map((time) => (
             <tr key={time}>
               <td>{time}:00</td>
+              {days.map((day) => (
+                <td key={day}>
+                  {events
+                    .filter((event) => event.day === day && event.time === time)
+                    .map((event) => {
+                      const count = getEventCount(day, time);
+                      const width = `${100 / count}%`;
+                      return (
+                        <div
+                          key={event.name}
+                          style={{ width }}
+                        >
+                          {event.name}
+                        </div>
+                      );
+                    })}
+                </td>
+              ))}
             </tr>
           ))}
         </tbody>
