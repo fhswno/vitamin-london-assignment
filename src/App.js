@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div>
-      <Table>
+      <Table bordered>
         <thead>
           <tr>
             <th></th>
