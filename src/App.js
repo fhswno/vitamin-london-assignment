@@ -21,6 +21,7 @@ function App() {
     setEventTime(9);
   };
 
+  // This function returns the number of events that are scheduled at the same day and time
   const getEventCount = (day, time) => {
     return events.filter((event) => event.day === day && event.time === time)
       .length;
