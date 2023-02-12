@@ -48,12 +48,12 @@ function App() {
                   <div className="event-container">
                     {events
                       .filter((event) => event.day === day && event.time === time)
-                      .map((event) => {
+                      .map((event, index) => {
                         const count = getEventCount(day, time);
                         const width = `${100 / count}%`;
                         return (
                           <div
-                            key={event.name}
+                            key={index}
                             className="event"
                             style={{ width }}
                           >
