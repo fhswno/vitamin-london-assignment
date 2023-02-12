@@ -33,7 +33,9 @@ function App() {
           <tr>
             <th></th>
             {days.map((day) => (
-              <th key={day}>{day}</th>
+              <th key={day} className='day-header'>
+                {day}
+              </th>
             ))}
           </tr>
         </thead>

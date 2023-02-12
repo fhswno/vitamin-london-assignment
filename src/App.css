@@ -36,5 +36,13 @@ td, th {
   align-items: center;
   text-align: center;
   overflow: hidden;
-  text-overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Inter', sans-serif;
+}
+
+.day-header {
+  width: 20%;
+  max-width: 20%;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
 }
