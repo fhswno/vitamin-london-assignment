@@ -43,20 +43,24 @@ function App() {
               <td>{time}:00</td>
               {days.map((day) => (
                 <td key={day}>
-                  {events
-                    .filter((event) => event.day === day && event.time === time)
-                    .map((event) => {
-                      const count = getEventCount(day, time);
-                      const width = `${100 / count}%`;
-                      return (
-                        <div
-                          key={event.name}
-                          style={{ width }}
-                        >
-                          {event.name}
-                        </div>
-                      );
-                    })}
+                  <div className="event-container">
+                    {events
+                      .filter((event) => event.day === day && event.time === time)
+                      .map((event) => {
+                        const count = getEventCount(day, time);
+                        const width = `${100 / count}%`;
+                        return (
+                          <div
+                            key={event.name}
+                            className="event"
+                            style={{ width }}
+                          >
+                            {event.name}
+                          </div>
+                        );
+                      })
+                    }
+                  </div>
                 </td>
               ))}
             </tr>

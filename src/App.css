@@ -14,3 +14,27 @@
 .submit-button {
   margin: 10px 0;
 }
+
+.event-container {
+  display: flex;
+  flex-direction: row;
+}
+
+td, th {
+  max-width: 150px;
+  height: 60px;
+  overflow: hidden;
+}
+
+.event {
+  background-color: #7DD3FC;
+  margin: 0 1px;
+  border-radius: 4px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: hidden;
+}
