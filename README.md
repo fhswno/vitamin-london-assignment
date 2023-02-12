@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# 🗓️ Vitamin Calendar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Simple Calendar view, with a basic form which lets users add events to the calendar.
 
-## Available Scripts
+<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). -->
 
-In the project directory, you can run:
+## 🛠️ How it was built
 
-### `npm start`
+This project was built with React, `react-bootstrap` and CSS. I've used a Google Font called 'Inter', and a free-of-rights custom favicon.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🤔 What it does
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Just use the form to type an event name, day and time, and the event will be shown at the appropriate location on the calendar.
 
-### `npm test`
+If two events happen at the same time, they will be shown side by side, and take an equal part of the column's width.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If an event name is not provided, a pop-up will show up to prompt the user to include one. The default event day is Monday, and the default event time is 9am.
 
-### `npm run build`
+## 👀 How to run it
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone the repository and use the Terminal to `cd` into the project folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Run `yarn install` or `npm install` to make sure all the project's dependencies are installed. Using `yarn` is recommended when working with React projects - you can also use `npm` if you prefer.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If you encounter any issues, try to remove `node_modules` and to run `npm install` or `yarn install` and give it another go.
 
-### `npm run eject`
+You should not have any problem to run the app on Chrome/Firefox/Edge or any Chromium-based Browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ❌ Limitations
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+When starting this project, my goal was not to spend more than 2.5 hours on it - that is, recommended time plus extra time just in case.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The Calendar view currently has the expected functionality, but lacks animations. Events can only be an hour long, and can only start at pre-defined hours.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The `table` element used in this solution prevents events from being dragged and dropped to another day/time. This choice also means that we couldn't add controls to go from one week to another.
