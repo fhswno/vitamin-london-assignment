@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const times = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            {days.map((day) => (
+              <th key={day}>{day}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {times.map((time) => (
+            <tr key={time}>
+              <td>{time}:00</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
